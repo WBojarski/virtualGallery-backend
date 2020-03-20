@@ -2,8 +2,15 @@ class UsersController < ApplicationController
 
 
     def index
-        playlists = User.all 
+        users = User.all 
+        render json: users
         
+    end
+
+
+    def show
+        user = User.find_by(username:params[:id])
+        render json: user
     end
 
     def new
@@ -15,9 +22,6 @@ class UsersController < ApplicationController
 
     def delete
     end
-
-
-
 
     private
 
@@ -32,15 +36,3 @@ class UsersController < ApplicationController
     
 end
 
-
-playlist = Playlist.create(playlist_params)
-render json: playlist   
-end
-
-def delete
-end
-
-private
-def playlist_params
-params.require(:playlist).permit(:name, :user_id)
-end

@@ -42,3 +42,292 @@ Migrating to CreateArtPieceCollections (20200320100536)
   [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8769931578474488310)[0m
   [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "Jeff"], ["email", "aaa@gmail.com"], ["password_digest", "asdasd"], ["bio", "aaa"], ["location", "london"], ["created_at", "2020-03-20 10:57:18.797630"], ["updated_at", "2020-03-20 10:57:18.797630"]]
+  [1m[35m (56.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-03-20 15:42:51 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/wojciech/.rvm/gems/ruby-2.6.1/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/wojciech/.rvm/gems/ruby-2.6.1/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 44.1ms | Allocations: 482)
+Completed 200 OK in 403ms (Views: 176.5ms | ActiveRecord: 0.0ms | Allocations: 2646)
+
+
+Started GET "/users" for ::1 at 2020-03-20 15:42:56 +0000
+  
+SyntaxError (/home/wojciech/development/module4/mod4project/virtualGallery-backend/app/controllers/users_controller.rb:38: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:38: syntax error, unexpected end, expecting end-of-input
+app/controllers/users_controller.rb:38: syntax error, unexpected end, expecting end-of-input
+Started GET "/users" for ::1 at 2020-03-20 15:43:56 +0000
+  
+SyntaxError (/home/wojciech/development/module4/mod4project/virtualGallery-backend/app/controllers/users_controller.rb:39: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:39: syntax error, unexpected end, expecting end-of-input
+app/controllers/users_controller.rb:39: syntax error, unexpected end, expecting end-of-input
+Started GET "/favicon.ico" for ::1 at 2020-03-20 15:43:57 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-03-20 15:44:11 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 103ms (Views: 16.1ms | ActiveRecord: 7.4ms | Allocations: 7644)
+
+
+Started GET "/users" for ::1 at 2020-03-20 15:45:47 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms | Allocations: 937)
+
+
+Started GET "/users" for ::1 at 2020-03-20 15:45:48 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 953)
+
+
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtPiece Create (19.5ms)[0m  [1m[32mINSERT INTO "art_pieces" ("title", "objectID", "isHighlight", "primaryImageSmall", "department", "culture", "artistDisplayName", "artistDisplayBio", "artistNationality", "artistWikidata_URL", "objectBeginDate", "objectEndDate", "medium", "dimensions", "city", "state", "country", "classification", "repository", "objectURL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22) RETURNING "id"[0m  [["title", "bestPiece"], ["objectID", 22], ["isHighlight", true], ["primaryImageSmall", ""], ["department", ""], ["culture", ""], ["artistDisplayName", ""], ["artistDisplayBio", ""], ["artistNationality", ""], ["artistWikidata_URL", ""], ["objectBeginDate", 111], ["objectEndDate", 111], ["medium", ""], ["dimensions", ""], ["city", ""], ["state", ""], ["country", ""], ["classification", ""], ["repository", ""], ["objectURL", ""], ["created_at", "2020-03-20 15:55:56.571263"], ["updated_at", "2020-03-20 15:55:56.571263"]]
+  [1m[35m (98.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCollection Create (18.3ms)[0m  [1m[32mINSERT INTO "collections" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "bestCat"], ["user_id", 1], ["created_at", "2020-03-20 15:56:55.773129"], ["updated_at", "2020-03-20 15:56:55.773129"]]
+  [1m[35m (79.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtPiece Load (0.7ms)[0m  [1m[34mSELECT "art_pieces".* FROM "art_pieces" WHERE "art_pieces"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtPieceCollection Create (1768.2ms)[0m  [1m[32mINSERT INTO "art_piece_collections" ("art_piece_id", "collection_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["art_piece_id", 1], ["collection_id", 1], ["created_at", "2020-03-20 15:57:56.757461"], ["updated_at", "2020-03-20 15:57:56.757461"]]
+  [1m[35m (611.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCollection Load (0.3ms)[0m  [1m[34mSELECT "collections".* FROM "collections" WHERE "collections"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/users" for ::1 at 2020-03-20 15:59:47 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 18.0ms | ActiveRecord: 6.9ms | Allocations: 7568)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtPiece Load (1.3ms)[0m  [1m[34mSELECT "art_pieces".* FROM "art_pieces" INNER JOIN "art_piece_collections" ON "art_pieces"."id" = "art_piece_collections"."art_piece_id" INNER JOIN "collections" ON "art_piece_collections"."collection_id" = "collections"."id" WHERE "collections"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/users" for ::1 at 2020-03-20 16:02:43 +0000
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 28ms (Views: 15.7ms | ActiveRecord: 8.0ms | Allocations: 8113)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:02:44 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 956)
+
+
+Started GET "/collections" for ::1 at 2020-03-20 16:03:11 +0000
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (0.7ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 13.4ms | ActiveRecord: 5.8ms | Allocations: 5770)
+
+
+Started GET "/art_pieces" for ::1 at 2020-03-20 16:03:15 +0000
+Processing by ArtPiecesController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1602)
+
+
+  
+NameError (uninitialized constant ArtPiecesController::Art_pieces):
+  
+app/controllers/art_pieces_controller.rb:4:in `index'
+Started GET "/art_pieces" for ::1 at 2020-03-20 16:03:36 +0000
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[36mArtPiece Create (2.2ms)[0m  [1m[32mINSERT INTO "art_pieces" ("title", "objectID", "isHighlight", "primaryImageSmall", "department", "culture", "artistDisplayName", "artistDisplayBio", "artistNationality", "artistWikidata_URL", "objectBeginDate", "objectEndDate", "medium", "dimensions", "city", "state", "country", "classification", "repository", "objectURL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22) RETURNING "id"[0m  [["title", "bestPiece"], ["objectID", 22], ["isHighlight", true], ["primaryImageSmall", ""], ["department", ""], ["culture", ""], ["artistDisplayName", ""], ["artistDisplayBio", ""], ["artistNationality", ""], ["artistWikidata_URL", ""], ["objectBeginDate", 111], ["objectEndDate", 111], ["medium", ""], ["dimensions", ""], ["city", ""], ["state", ""], ["country", ""], ["classification", ""], ["repository", ""], ["objectURL", ""], ["created_at", "2020-03-20 16:03:36.371198"], ["updated_at", "2020-03-20 16:03:36.371198"]]
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[36mCollection Create (1.1ms)[0m  [1m[32mINSERT INTO "collections" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "bestCat"], ["user_id", 1], ["created_at", "2020-03-20 16:03:36.473407"], ["updated_at", "2020-03-20 16:03:36.473407"]]
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[35m (57.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+Processing by ArtPiecesController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1643)
+
+
+  
+NameError (uninitialized constant ArtPiecesController::ArtPieces):
+  
+app/controllers/art_pieces_controller.rb:4:in `index'
+Started GET "/art_pieces" for ::1 at 2020-03-20 16:03:52 +0000
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[36mArtPiece Create (0.6ms)[0m  [1m[32mINSERT INTO "art_pieces" ("title", "objectID", "isHighlight", "primaryImageSmall", "department", "culture", "artistDisplayName", "artistDisplayBio", "artistNationality", "artistWikidata_URL", "objectBeginDate", "objectEndDate", "medium", "dimensions", "city", "state", "country", "classification", "repository", "objectURL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22) RETURNING "id"[0m  [["title", "bestPiece"], ["objectID", 22], ["isHighlight", true], ["primaryImageSmall", ""], ["department", ""], ["culture", ""], ["artistDisplayName", ""], ["artistDisplayBio", ""], ["artistNationality", ""], ["artistWikidata_URL", ""], ["objectBeginDate", 111], ["objectEndDate", 111], ["medium", ""], ["dimensions", ""], ["city", ""], ["state", ""], ["country", ""], ["classification", ""], ["repository", ""], ["objectURL", ""], ["created_at", "2020-03-20 16:03:52.396872"], ["updated_at", "2020-03-20 16:03:52.396872"]]
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[35m (18.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[36mCollection Create (0.5ms)[0m  [1m[32mINSERT INTO "collections" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "bestCat"], ["user_id", 1], ["created_at", "2020-03-20 16:03:52.470244"], ["updated_at", "2020-03-20 16:03:52.470244"]]
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[35m (62.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+Processing by ArtPiecesController#index as HTML
+  [1m[36mArtPiece Load (0.9ms)[0m  [1m[34mSELECT "art_pieces".* FROM "art_pieces"[0m
+  ↳ app/controllers/art_pieces_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.9ms | Allocations: 2020)
+
+
+Started GET "/art_pieces" for ::1 at 2020-03-20 16:03:55 +0000
+Processing by ArtPiecesController#index as HTML
+  [1m[36mArtPiece Load (0.6ms)[0m  [1m[34mSELECT "art_pieces".* FROM "art_pieces"[0m
+  ↳ app/controllers/art_pieces_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.6ms | Allocations: 1938)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:04:01 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 959)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:08:05 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Jeff", email: "aaa@gmail.com", password_digest: [FILTERED], bio: "aaa", location: "london", created_at: "2020-03-20 10:57:18", updated_at: "2020-03-20 10:57:18">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.77ms)
+Completed 200 OK in 75ms (Views: 55.1ms | ActiveRecord: 13.4ms | Allocations: 9216)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:08:11 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Jeff", email: "aaa@gmail.com", password_digest: [FILTERED], bio: "aaa", location: "london", created_at: "2020-03-20 10:57:18", updated_at: "2020-03-20 10:57:18">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.29ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 1178)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:08:14 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Jeff", email: "aaa@gmail.com", password_digest: [FILTERED], bio: "aaa", location: "london", created_at: "2020-03-20 10:57:18", updated_at: "2020-03-20 10:57:18">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.22ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1178)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:09:48 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Jeff", email: "aaa@gmail.com", password_digest: [FILTERED], bio: "aaa", location: "london", created_at: "2020-03-20 10:57:18", updated_at: "2020-03-20 10:57:18">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.4ms)
+Completed 200 OK in 29ms (Views: 18.1ms | ActiveRecord: 7.1ms | Allocations: 7699)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:10:08 +0000
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Jeff", email: "aaa@gmail.com", password_digest: [FILTERED], bio: "aaa", location: "london", created_at: "2020-03-20 10:57:18", updated_at: "2020-03-20 10:57:18">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.45ms)
+Completed 200 OK in 37ms (Views: 19.7ms | ActiveRecord: 11.8ms | Allocations: 8966)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:15:18 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Jeff", email: "aaa@gmail.com", password_digest: [FILTERED], bio: "aaa", location: "london", created_at: "2020-03-20 10:57:18", updated_at: "2020-03-20 10:57:18">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.47ms)
+Completed 200 OK in 34ms (Views: 19.4ms | ActiveRecord: 7.8ms | Allocations: 8965)
+
+
+Started GET "/collections" for ::1 at 2020-03-20 16:15:31 +0000
+Processing by CollectionsController#index as HTML
+  [1m[36mCollection Load (1.6ms)[0m  [1m[34mSELECT "collections".* FROM "collections"[0m
+  ↳ app/controllers/collections_controller.rb:6:in `index'
+No serializer found for resource: #<Collection id: 1, category: "bestCat", user_id: 1, created_at: "2020-03-20 15:56:55", updated_at: "2020-03-20 15:56:55">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Collection::ActiveRecord_Relation (0.64ms)
+Completed 200 OK in 24ms (Views: 11.7ms | ActiveRecord: 6.7ms | Allocations: 6288)
+
+
+Started GET "/art_pieces" for ::1 at 2020-03-20 16:15:44 +0000
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[36mArtPiece Create (5.0ms)[0m  [1m[32mINSERT INTO "art_pieces" ("title", "objectID", "isHighlight", "primaryImageSmall", "department", "culture", "artistDisplayName", "artistDisplayBio", "artistNationality", "artistWikidata_URL", "objectBeginDate", "objectEndDate", "medium", "dimensions", "city", "state", "country", "classification", "repository", "objectURL", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22) RETURNING "id"[0m  [["title", "bestPiece"], ["objectID", 22], ["isHighlight", true], ["primaryImageSmall", ""], ["department", ""], ["culture", ""], ["artistDisplayName", ""], ["artistDisplayBio", ""], ["artistNationality", ""], ["artistWikidata_URL", ""], ["objectBeginDate", 111], ["objectEndDate", 111], ["medium", ""], ["dimensions", ""], ["city", ""], ["state", ""], ["country", ""], ["classification", ""], ["repository", ""], ["objectURL", ""], ["created_at", "2020-03-20 16:15:44.516690"], ["updated_at", "2020-03-20 16:15:44.516690"]]
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_pieces_controller.rb:29:in `<main>'
+  [1m[35m (3.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[36mCollection Create (0.7ms)[0m  [1m[32mINSERT INTO "collections" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "bestCat"], ["user_id", 1], ["created_at", "2020-03-20 16:15:44.587023"], ["updated_at", "2020-03-20 16:15:44.587023"]]
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+  [1m[35m (117.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_pieces_controller.rb:30:in `<main>'
+Processing by ArtPiecesController#index as HTML
+  [1m[36mArtPiece Load (0.7ms)[0m  [1m[34mSELECT "art_pieces".* FROM "art_pieces"[0m
+  ↳ app/controllers/art_pieces_controller.rb:5:in `index'
+No serializer found for resource: #<ArtPiece id: 1, title: "bestPiece", objectID: 22, isHighlight: true, primaryImage: nil, primaryImageSmall: "", department: "", culture: "", artistDisplayName: "", artistDisplayBio: "", artistAlphaSort: nil, artistNationality: "", artistWikidata_URL: "", objectBeginDate: 111, objectEndDate: 111, medium: "", dimensions: "", city: "", state: "", country: "", classification: "", repository: "", objectURL: "", created_at: "2020-03-20 15:55:56", updated_at: "2020-03-20 15:55:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ArtPiece::ActiveRecord_Relation (3.23ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.7ms | Allocations: 2750)
+
+
+Started GET "/" for ::1 at 2020-03-20 16:23:11 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/wojciech/.rvm/gems/ruby-2.6.1/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/wojciech/.rvm/gems/ruby-2.6.1/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 29.1ms | Allocations: 314)
+Completed 200 OK in 500ms (Views: 259.7ms | ActiveRecord: 0.0ms | Allocations: 1747)
+
+
+Started GET "/users" for ::1 at 2020-03-20 16:23:19 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+No serializer found for resource: #<User id: 1, username: "Jeff", email: "aaa@gmail.com", password_digest: [FILTERED], bio: "aaa", location: "london", created_at: "2020-03-20 10:57:18", updated_at: "2020-03-20 10:57:18">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 30ms (Views: 17.1ms | ActiveRecord: 1.0ms | Allocations: 7588)
+
+
