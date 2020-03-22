@@ -1,6 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
 
-    attributes :data
+    attributes :username,:data
 
 
     def data
