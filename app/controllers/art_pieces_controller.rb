@@ -26,5 +26,10 @@ class ArtPiecesController < ApplicationController
     end
 end
 
-ArtPiece.create(title: "bestPiece", objectID: 22, isHighlight: true, primaryImage: "",primaryImageSmall: "", department: "", culture: "", artistDisplayName: "", artistDisplayBio: "", artistNationality: "", artistWikidata_URL: "", objectBeginDate: 111, objectEndDate: 111, medium: "", dimensions: "", city: "", state: "", country: "", classification: "", repository: "", objectURL: "")
-Collection.create(category: "bestCat", user_id: 1)
+
+
+
+
+
+# ArtPiece.create(title: "bestPiece", objectID: 22, isHighlight: true, primaryImage: "",primaryImageSmall: "", department: "", culture: "", artistDisplayName: "", artistDisplayBio: "", artistNationality: "", artistWikidata_URL: "", objectBeginDate: 111, objectEndDate: 111, medium: "", dimensions: "", city: "", state: "", country: "", classification: "", repository: "", objectURL: "")
+# Collection.create(category: "bestCat", user_id: 1)
