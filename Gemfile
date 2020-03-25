@@ -23,7 +23,7 @@ gem 'bcrypt', '~> 3.1.12'
 gem 'bootsnap', '>= 1.4.2', require: false
 # use jwt so we can encode Jason web tokens
 gem 'jwt'
-
+gem 'rest-client'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 gem 'active_model_serializers'
