@@ -81,6 +81,7 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    json (2.1.0)
     jsonapi-renderer (0.2.2)
     jwt (2.2.1)
     listen (3.1.5)
@@ -182,6 +183,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.12)
   bootsnap (>= 1.4.2)
   byebug
+  json
   jwt
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)

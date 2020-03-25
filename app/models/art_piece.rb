@@ -39,3 +39,4 @@ class ArtPiece < ApplicationRecord
         
     
 end
+

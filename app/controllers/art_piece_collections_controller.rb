@@ -1,6 +1,5 @@
 class ArtPieceCollectionsController < ApplicationController
     def create
-        
         art_piece_collection = ArtPieceCollection.create(artpiececollection_params)
         render json: art_piece_collection
 
