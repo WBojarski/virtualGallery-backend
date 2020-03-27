@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :art_piece_collections
   resources :art_pieces
   resources :collections
-  resources :users, only: [:create]
+  resources :users
   post "/sign-in", to: "users#sign_in"
   get "/validate", to: "users#validate"
   get "/validate", to: "users#validate"
